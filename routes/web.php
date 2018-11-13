@@ -16,6 +16,7 @@ Route::get('/', 'TestController@welcome');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/products/{id}', 'ProductController@show');
 
 // Route::get('/admin/products', 'ProductController@index'); //listado
 // Route::get('/admin/products/create', 'ProductController@create'); //crear
@@ -24,7 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Route::post('/admin/products/{id}/edit', 'ProductController@update');
 // Route::delete('/admin/products/{id}', 'ProductController@destroy');
 
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+Route::middleware(['auth', 'admin'])->prefix('admin')->namespace('Admin')->group(function () {
   Route::get('/products', 'ProductController@index'); //listado
   Route::get('/products/create', 'ProductController@create'); //crear
   Route::post('/products', 'ProductController@store'); //registrar
