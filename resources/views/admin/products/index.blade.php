@@ -24,8 +24,8 @@
                 <thead>
                     <tr>
                         <th class="text-center">#</th>
-                        <th>Nombre</th>
-                        <th>Descripcion</th>
+                        <th class="col-md-2">Nombre</th>
+                        <th class="col-md-3">Descripcion</th>
                         <th>Categoria</th>
                         <th class="text-right">Precios</th>
                         <th class="text-right">Opciones</th>
@@ -50,6 +50,9 @@
                               </a>
                               <a href="{{ url('/admin/products/'.$product->id.'/edit') }}" rel="tooltip" class="btn btn-success btn-link">
                                   <i class="material-icons">edit</i>
+                              </a>
+                              <a href="{{ url('/admin/products/'.$product->id.'/images') }}" rel="tooltip" class="btn btn-warning btn-link">
+                                <i class="material-icons">image</i>
                               </a>
                               <button type="submit" rel="tooltip" class="btn btn-danger btn-link">
                                 <i class="material-icons">close</i>
