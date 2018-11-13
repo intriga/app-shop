@@ -17,9 +17,18 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin/products', 'ProductController@index'); //listado
-Route::get('/admin/products/create', 'ProductController@create'); //crear
-Route::post('/admin/products', 'ProductController@store'); //registrar
-Route::get('/admin/products/{id}/edit', 'ProductController@edit'); 
-Route::post('/admin/products/{id}/edit', 'ProductController@update');
-Route::delete('/admin/products/{id}', 'ProductController@destroy');
+// Route::get('/admin/products', 'ProductController@index'); //listado
+// Route::get('/admin/products/create', 'ProductController@create'); //crear
+// Route::post('/admin/products', 'ProductController@store'); //registrar
+// Route::get('/admin/products/{id}/edit', 'ProductController@edit'); 
+// Route::post('/admin/products/{id}/edit', 'ProductController@update');
+// Route::delete('/admin/products/{id}', 'ProductController@destroy');
+
+Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
+  Route::get('/products', 'ProductController@index'); //listado
+  Route::get('/products/create', 'ProductController@create'); //crear
+  Route::post('/products', 'ProductController@store'); //registrar
+  Route::get('/products/{id}/edit', 'ProductController@edit'); 
+  Route::post('/products/{id}/edit', 'ProductController@update');
+  Route::delete('/products/{id}', 'ProductController@destroy');
+});
