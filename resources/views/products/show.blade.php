@@ -29,18 +29,8 @@
         <h2 class="title">{!! $product->name !!}</h2>
         <div class="team">
           <div class="row">
-
-          
-            {{-- <div class="card mb-3">
-              <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-              </div>
-            </div> --}}
-            
-            
+                                 
+           
             {{-- <div class="col-md-4"> --}}
               <div class="team-player">
                 <div class="card card-plain">
@@ -55,8 +45,11 @@
                   <div class="card-body">
                     <p class="card-description">{!! $product->long_description !!}</p>
                   </div>
-                  
+                                    
                 </div>
+                <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddTocart">
+                    <i class="material-icons">add</i> Añadir al carrito de compras
+                  </button>
               </div>
 
                            
@@ -87,5 +80,30 @@
   @include('includes.footer')
   
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalAddTocart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Seleccione la cantidad que desea agegar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="POST" action="">
+        <div class="modal-body">
+          <input type="number" name="quantity" value="1" class="form-control">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default btn-link" data-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-info btn-link">Añadir al carrito</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 @endsection
+
 
