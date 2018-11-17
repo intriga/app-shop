@@ -37,11 +37,19 @@
                   <div class="profile">
                     <img src="{{ $product->featured_image_url }}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
                   </div>
+            
                   <h4 class="card-title">
                     <a href="{{ url('/products/'. $product->id) }}">{!! $product->name !!}</a>
                     <br>
                     <small class="card-description text-muted">{!! $product->category->name !!}</small>
                   </h4>
+
+                   @if (session('notifications'))
+                    <div class="alert alert-success">
+                        {{ session('notifications') }}
+                    </div>
+                  @endif
+
                   <div class="card-body">
                     <p class="card-description">{!! $product->long_description !!}</p>
                   </div>

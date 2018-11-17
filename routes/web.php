@@ -21,6 +21,8 @@ Route::get('/products/{id}', 'ProductController@show');
 Route::post('/cart', 'CartDetailController@store');
 Route::delete('/cart', 'CartDetailController@destroy');
 
+Route::post('/order', 'CartController@update');
+
 // Route::get('/admin/products', 'ProductController@index'); //listado
 // Route::get('/admin/products/create', 'ProductController@create'); //crear
 // Route::post('/admin/products', 'ProductController@store'); //registrar
