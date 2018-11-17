@@ -91,7 +91,9 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form method="POST" action="">
+      <form method="POST" action="{{ url('/cart') }}">
+        {{ csrf_field() }}
+        <input type="hidden" name="product_id" value="{{ $product->id }}">
         <div class="modal-body">
           <input type="number" name="quantity" value="1" class="form-control">
         </div>

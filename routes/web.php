@@ -18,6 +18,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/products/{id}', 'ProductController@show');
 
+Route::post('/cart', 'CartDetailController@store');
+Route::delete('/cart', 'CartDetailController@destroy');
+
 // Route::get('/admin/products', 'ProductController@index'); //listado
 // Route::get('/admin/products/create', 'ProductController@create'); //crear
 // Route::post('/admin/products', 'ProductController@store'); //registrar
