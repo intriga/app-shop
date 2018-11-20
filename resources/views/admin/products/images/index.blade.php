@@ -27,10 +27,10 @@
 
             <div class="row">
             @foreach ($images as $image)
-              <div class="col-md-4">
+              <div class="col-md-6">
                 <div class="card">
                   <div class="card-body">
-                    <img src="{{ $image->url }}" alt="">
+                    <img src="{{ $image->url }}" width="240">
                     <form action="" method="post">
                       {{ csrf_field() }}
                       {{ method_field('DELETE') }}

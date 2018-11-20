@@ -35,7 +35,7 @@
               <div class="team-player">
                 <div class="card card-plain">
                   <div class="profile">
-                    <img src="{{ $product->featured_image_url }}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                    <img src="{{ $product->featured_image_url }}" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid img-responsive" width="300">
                   </div>
             
                   <h4 class="card-title">
@@ -71,7 +71,7 @@
               <div class="team-player">
                 <div class="card card-plain">
                   <div class="profile">
-                    <img src="{{ $image->url }}" alt="Thumbnail Image" class="img-raised img-fluid">
+                    <img src="{{ $image->url }}" alt="Thumbnail Image" class="img-raised img-fluid img-responsive"  width="250">
                   </div>                                   
                 </div>
               </div>
