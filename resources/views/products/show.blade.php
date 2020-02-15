@@ -55,9 +55,11 @@
                   </div>
                                     
                 </div>
+                {{-- @if (Auth::check()) --}}
                 <button class="btn btn-primary btn-round" data-toggle="modal" data-target="#modalAddTocart">
                     <i class="material-icons">add</i> Añadir al carrito de compras
                   </button>
+                {{-- @endif --}}
               </div>
 
                            
@@ -90,6 +92,7 @@
 </div>
 
 <!-- Modal -->
+@if (Auth::check())
 <div class="modal fade" id="modalAddTocart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -113,6 +116,26 @@
     </div>
   </div>
 </div>
+@else
+<div class="modal fade" id="modalAddTocart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        {{-- <h5 class="modal-title" id="exampleModalLabel">Seleccione la cantidad que desea agegar</h5> --}}
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+        <div class="modal-body">
+          <p>Primero tienes que loggearte
+          </p>
+        </div>
+      
+    </div>
+  </div>
+</div>
+@endif
 
 @endsection
 
